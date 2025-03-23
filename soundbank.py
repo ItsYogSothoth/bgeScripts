@@ -19,7 +19,7 @@ def processBank(bankFile):
         if files[x].hasData:
             files[x].byteContent = bankFile.read(files[x].getDataSize())
 
-    outputDir = "output/" + bankFilename
+    outputDir = "output/soundbank/" + bankFilename
     if not os.path.isdir(outputDir):
         os.makedirs(outputDir)
     for x in range(len(files)):
@@ -43,4 +43,5 @@ def main():
         processBank(bankFile)
         bankFile.close()
 
-main()
+if __name__ == "__main__":
+    main()
